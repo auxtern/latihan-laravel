@@ -11,7 +11,7 @@
         <div class="card-body">
             <div class="d-flex mb-2">
                 <div class="flex-fill">
-                    <h3>Daftar Todo</h3>
+                    <h3>Daftar Todo Kamu</h3>
                 </div>
                 <div>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTodoModal">
