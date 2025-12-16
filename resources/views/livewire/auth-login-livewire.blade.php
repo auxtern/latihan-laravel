@@ -7,6 +7,7 @@
                     <h2>Masuk</h2>
                 </div>
                 <hr>
+
                 {{-- Alamat Email --}}
                 <div class="form-group mb-3">
                     <label>Email</label>
@@ -15,6 +16,7 @@
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
+
                 {{-- Kata Sandi --}}
                 <div class="form-group mb-3">
                     <label>Kata Sandi</label>
@@ -30,8 +32,30 @@
                 </div>
 
                 <hr>
-                <p class="text-center">Belum memiliki akun? <a href="{{ route('auth.register') }}">Daftar</a></p>
+                <p class="text-center">Belum memiliki akun?
+                    <a href="{{ route('auth.register') }}">Daftar</a>
+                </p>
             </div>
         </div>
     </div>
 </form>
+
+@section('others-css')
+    <link rel="stylesheet" href="/assets/vendor/node_modules/sweetalert2/dist/sweetalert2.min.css">
+@endsection
+
+@section('others-js')
+    <script src="/assets/vendor/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
+    <script>
+        document.addEventListener("livewire:init", () => {
+            Livewire.on("showError", (data) => {
+                Swal.fire({
+                    icon: "error",
+                    title: "Gagal Masuk",
+                    text: data.message,
+                });
+            });
+        });
+    </script>
+@endsection

@@ -17,6 +17,7 @@
     {{-- Styles --}}
     @livewireStyles
     <link rel="stylesheet" href="/assets/vendor/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    @yield('others-css')
 </head>
 
 <body class="bg-light">
@@ -27,6 +28,8 @@
     {{-- Scripts --}}
     @livewireScripts
     <link rel="stylesheet" href="/assets/vendor/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js">
+
+    @yield('others-js')
 </body>
 
 </html>
